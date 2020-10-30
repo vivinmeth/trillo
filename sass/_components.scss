@@ -258,6 +258,62 @@
   }
 }
 
+
+.btn{
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  border-radius: 100px;
+  border:none;
+  background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all .2s;
+
+  & > *{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    transition: all .2s;
+  }
+
+  &__visible{
+    padding: 2rem 7.5rem;
+
+  }
+
+  &__invisible{
+    padding: 2rem 0;
+
+    position: absolute;
+    
+    left: 0;
+    top:-100%;
+
+
+  }
+
+  &:hover{
+    background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+  }
+
+  &:hover &__visible{
+      transform: translateY(100%);
+    }
+
+  &:hover &__invisible{
+    top:0;
+    }
+
+  &:focus{
+    outline: none;
+    animation: pulsate 1s infinite;
+  }
+
+}
+
 .btn-inline{
   border:none;
   background-color: transparent;
@@ -268,6 +324,7 @@
   display: inline-block;
   cursor: pointer;
   transition: all .2s;
+
 
   & span{
     margin-left: 3px;
@@ -436,5 +493,17 @@
     color: var(--color-grey-light-2);
     font-family: sans-serif;
     z-index: 1;
+  }
+}
+
+.cta{
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__book-now{
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
   }
 }
